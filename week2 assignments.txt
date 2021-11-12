@@ -1,0 +1,277 @@
+test case 1
+
+package day1;
+
+
+	import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+	import io.github.bonigarcia.wdm.WebDriverManager;
+
+	public class Loginpage {
+
+		public static void main(String[] args) {
+			WebDriverManager.chromedriver().setup();
+			
+			ChromeDriver driver = new ChromeDriver();
+			driver.manage().window().maximize();
+			driver.get("http://leaftaps.com/opentaps/");
+			driver.findElement(By.id("username")).sendKeys("DemoSalesManager");
+			driver.findElement(By.id("password")).sendKeys("crmsfa");
+			driver.findElement(By.className("decorativeSubmit")).click();
+			driver.findElement(By.linkText("CRM/SFA")).click();
+			driver.findElement(By.linkText("Leads")).click();
+			driver.findElement(By.linkText("Create Lead")).click();
+			driver.findElement(By.id("createLeadForm_companyName")).sendKeys("testleaf");
+			driver.findElement(By.id("createLeadForm_firstName")).sendKeys("prabu");
+			driver.findElement(By.id("createLeadForm_lastName")).sendKeys("deva");
+			driver.findElement(By.name("submitButton")).click();
+			
+			
+			String title= driver.getTitle();
+			System.out.println("The title is"+title);
+			
+			String text1=driver.findElement(By.id("viewLead_companyName_sp")).getText();
+			System.out.println("Company name"+text1);
+			String text2=driver.findElement(By.id("viewLead_firstName_sp")).getText();
+			System.out.println("Firstnamename"+text2);
+			String text3=driver.findElement(By.id("viewLead_lastName_sp")).getText();
+			System.out.println("Lastname"+text3);
+
+		}
+
+	}
+
+test case 2
+
+package day1;
+
+
+	import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+	import io.github.bonigarcia.wdm.WebDriverManager;
+
+	public class Loginpage {
+
+		public static void main(String[] args) {
+			WebDriverManager.chromedriver().setup();
+			
+			ChromeDriver driver = new ChromeDriver();
+			driver.manage().window().maximize();
+			driver.get("http://leaftaps.com/opentaps/");
+			driver.findElement(By.id("username")).sendKeys("DemoSalesManager");
+			driver.findElement(By.id("password")).sendKeys("crmsfa");
+			driver.findElement(By.className("decorativeSubmit")).click();
+			driver.findElement(By.linkText("CRM/SFA")).click();
+			driver.findElement(By.linkText("Contacts")).click();
+			driver.findElement(By.linkText("Find Contacts")).click();
+			driver.findElement(By.xpath("//span[text()='Email']")).click();
+			driver.findElement(By.name("emailAddress")).sendKeys("babu@testleaf");
+			driver.findElement(By.xpath("//button[text()='Find Contacts']")).click();
+			
+			//input[@name='emailAddress']
+			
+		}
+
+	}
+
+facebook
+
+package day1;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+	public class Loginpage {
+
+		public static void main(String[] args) throws InterruptedException {
+			WebDriverManager.chromedriver().setup();
+			
+			ChromeDriver driver = new ChromeDriver();
+			driver.manage().window().maximize();
+			driver.get("https://en-gb.facebook.com/");
+			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		
+			driver.findElement(By.xpath("//a[@data-testid='open-registration-form-button']")).click();
+			driver.findElement(By.xpath("//input[@name='firstname']")).sendKeys("prabu");
+			driver.findElement(By.xpath("//input[@name='lastname']")).sendKeys("deva");
+			 driver.findElement(By.name("reg_email__")).sendKeys("54521765412");
+
+			driver.findElement(By.xpath("//input[@id='password_step_input']")).sendKeys("123456");
+			WebElement birthdayday = driver.findElement(By.id("day")); 
+			 new Select(birthdayday).selectByVisibleText("10");
+			 WebElement birthdaymonth = driver.findElement(By.id("month")); 
+			 new Select(birthdaymonth).selectByVisibleText("Nov"); 
+			 WebElement birthdayyear = driver.findElement(By.id("year")); 
+			 new Select(birthdayyear).selectByVisibleText("1993"); 
+			 driver.findElement(By.xpath("//label[text()='Male']")).click();
+			 
+		}
+		
+		
+
+	}
+
+sales force
+
+package day1;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+	public class Loginpage {
+
+		public static void main(String[] args) throws InterruptedException {
+			WebDriverManager.chromedriver().setup();
+			
+			ChromeDriver driver = new ChromeDriver();
+			driver.manage().window().maximize();
+			driver.get("https://www.salesforce.com/in/form/signup/freetrial-sales/?d=70130000000Enyk");
+			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(4));
+			driver.findElement(By.name("UserFirstName")).sendKeys("prabu");
+			 driver.findElement(By.name("UserLastName")).sendKeys("deva");
+			 driver.findElement(By.name("UserEmail")).sendKeys("prabudeva@gmail.com");
+			 WebElement userTitle = driver.findElement(By.name("UserTitle")); 
+			 new Select(userTitle).selectByVisibleText("IT Manager");
+			 driver.findElement(By.name("CompanyName")).sendKeys("tuke");
+			 WebElement companyEmployees = driver.findElement(By.name("CompanyEmployees")); 
+			 new Select(companyEmployees).selectByVisibleText("1501+ employees"); 
+			 driver.findElement(By.name("UserPhone")).sendKeys("12345678910");
+			 WebElement companyCountry = driver.findElement(By.name("CompanyCountry")); 
+			 new Select(companyCountry).selectByVisibleText("France"); 
+			 Thread. sleep(100);
+			 driver.findElement(By.xpath("(//div[@class='checkbox-ui'])[2]")).click();
+			
+			 
+		}
+		
+		
+
+	}
+
+create contact and edit
+
+package day1;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+	public class Loginpage {
+
+		public static void main(String[] args) throws InterruptedException {
+			WebDriverManager.chromedriver().setup();
+			
+			ChromeDriver driver = new ChromeDriver();
+			driver.manage().window().maximize();
+			driver.get("http://leaftaps.com/opentaps/control/main");
+			
+			driver.findElement(By.id("username")).sendKeys("DemoSalesManager");
+			 driver.findElement(By.id("password")).sendKeys("crmsfa");
+			 driver.findElement(By.className("decorativeSubmit")).click();
+			 driver.findElement(By.linkText("CRM/SFA")).click();
+			 driver.findElement(By.linkText("Contacts")).click();
+			 driver.findElement(By.linkText("Create Contact")).click();
+			 driver.findElement(By.id("firstNameField")).sendKeys("prabu");
+			 driver.findElement(By.id("lastNameField")).sendKeys("deva");
+			 driver.findElement(By.id("createContactForm_firstNameLocal")).sendKeys("arun");
+			 driver.findElement(By.id("createContactForm_lastNameLocal")).sendKeys("kumar");
+			 driver.findElement(By.id("createContactForm_departmentName")).sendKeys("informatics");
+			 driver.findElement(By.name("description")).click();
+			 driver.findElement(By.id("createContactForm_primaryEmail")).sendKeys("prdeva3@gmail.com");
+			 WebElement generalCountryGeoId = driver.findElement(By.id("createContactForm_generalCountryGeoId")); 
+			 new Select(generalCountryGeoId).selectByVisibleText("France"); 
+			 driver.findElement(By.name("submitButton")).click();
+			 driver.findElement(By.linkText("Edit")).click();
+			 driver.findElement(By.id("updateContactForm_description")).clear();
+			 String importantNote = driver.findElement(By.name("importantNote")).getText();
+			 driver.findElement(By.xpath("//input[@name='submitButton']")).click();
+			 System.out.println("page Title is:" + driver.getTitle());
+			 
+		}
+}
+
+log out
+
+package day1;
+import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class First {
+
+	public static void main(String[] args) throws InterruptedException {
+		WebDriverManager.chromedriver().setup();
+		
+		ChromeDriver driver= new ChromeDriver();
+		
+		driver.get("https://acme-test.uipath.com/login");
+		driver.manage().window().maximize();
+		
+		driver.findElement(By.id("email")).sendKeys("kumar.testleaf@gmail.com");
+		driver.findElement(By.id("password")).sendKeys("leaf@12");
+		driver.findElement(By.xpath("//button[@type='submit']")).click();
+		
+		System.out.println("page Title is: " + driver.getTitle());
+		driver.findElement(By.linkText("Log Out")).click();
+		
+		Thread.sleep(2000);
+
+	}
+
+}
+
+account reg
+
+package day1;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class First {
+
+	public static void main(String[] args) throws InterruptedException {
+		WebDriverManager.chromedriver().setup();
+		
+		ChromeDriver driver= new ChromeDriver();
+		
+		driver.get("https://WWW.opencart.com/index.php?route=account/register");
+		 driver.findElement(By.id("input-username")).sendKeys("prabu");
+		 driver.findElement(By.name("firstname")).sendKeys("deva");
+		 driver.findElement(By.name("lastname")).sendKeys("pr");
+		 driver.findElement(By.id("input-email")).sendKeys("prdeva3@gmail.com");
+		 WebElement countryid = driver.findElement(By.id("input-country")); 
+		 new Select(countryid).selectByVisibleText("India");
+		 driver.findElement(By.id("input-password")).sendKeys("123456");
+		 driver.findElement(By.className("bg-info")).click();
+		 driver.findElement(By.xpath("html[1]")).click();
+		
+
+	}
+
+}
