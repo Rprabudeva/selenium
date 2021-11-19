@@ -1,0 +1,65 @@
+package week3;
+
+public class AndroidPhone extends Mobile {
+	public void takeVideo() {
+		System.out.println("Take Video  from AndroidPhone");
+	}
+	public static void main(String[] args) {
+	
+		AndroidPhone ph = new AndroidPhone();
+	ph.takeVideo();
+		ph.sendmessage();
+		ph.makecall();
+		ph.savecontact();
+
+	}
+}package week3;
+
+public class Mobile {
+	public void sendmessage() {
+		System.out.println("sendmessage");
+
+	}
+	public void makecall() {
+		System.out.println("makecall");
+
+	}
+public void savecontact() {
+	System.out.println("savecontact");
+	
+
+}
+public static void main(String[] args) {
+	
+}
+}
+package week3;
+
+public class myphone {
+	public static void main(String[] args) {
+		smartphone ph=new smartphone();
+		ph.sendmessage();
+		ph.makecall();
+		ph.savecontact();
+		ph.takeVideo();
+		ph.connectwhatsapp();
+
+	}
+
+
+}
+package week3;
+
+public class smartphone extends AndroidPhone {
+	public void connectwhatsapp() {
+		
+		System.out.println("whatsapp");
+
+	}
+	public void takenvideo() {
+		smartphone sm=new smartphone();
+		sm.takeVideo();
+
+	}
+	
+}

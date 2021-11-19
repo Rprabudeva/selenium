@@ -1,0 +1,32 @@
+package org.SYSTEM;
+
+public class system {
+	public  void computerModel() {
+		System.out.println("The model of laptop is DELL");
+	}
+	public static void main(String[] args) {
+		
+
+	}
+
+}
+
+package org.SYSTEM;
+
+public class desktop extends system {
+public void desktopSize() {
+		
+		System.out.println("laptop size 14.5");
+       
+		
+	}
+	public static void main(String[] args) {
+		
+		desktop my = new desktop();
+		
+		my.computerModel();
+		my.desktopSize();
+		
+	}
+
+}

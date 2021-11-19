@@ -1,0 +1,38 @@
+package week3;
+
+public class axisbank  extends bankinformation {
+	
+	public void deposit() {
+		System.out.println("The deposit rate is 7%");
+	}
+	public static void main(String[] args) {
+		
+		axisbank bk=new axisbank();
+		bk.deposit();
+		bk.fixed();
+		bk.saving();
+
+	}
+
+}
+package week3;
+
+public class bankinformation {
+	public void saving() {
+		System.out.println("Savings 4.5%");
+	}
+	
+	
+	public void fixed() {
+		System.out.println("FD 8.5%");
+	}
+	
+	public void deposit() {
+		System.out.println("Deposit 10%");
+	}
+
+	public static void main(String[] args) {
+	
+
+	}
+}
